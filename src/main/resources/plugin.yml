@@ -1,0 +1,15 @@
+name: AStrangeCore
+main: org.example.Main
+version: 1.0
+description: Essentials moderation
+api-version: 1.21.4
+author: Quattra
+
+commands:
+  adminChat:
+    usage: /adminChat
+    description: sends message to all admins.
+
+  updateAdminList:
+    usage: /updateAdminList
+    description: prints 2.

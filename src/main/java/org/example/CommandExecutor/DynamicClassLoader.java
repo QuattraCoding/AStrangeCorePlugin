@@ -31,26 +31,6 @@ public class DynamicClassLoader {
             }
             catch (Exception ignored){
             }
-        /*} else if (c.equals(TeamTemplate.class)) {
-            try {
-                Reflections reflections = new Reflections("org.example.Teams");
-                Set<Class<? extends TeamTemplate>> classes = reflections.getSubTypesOf(TeamTemplate.class);
-                for (Class<? extends TeamTemplate> cl : classes) {
-                    try {
-                        Object instance = cl.getDeclaredConstructor().newInstance();
-                        instances.add(instance);
-                    } catch (InstantiationException | IllegalAccessException | NoSuchMethodException |
-                             InvocationTargetException e) {
-                        Bukkit.broadcastMessage("could not instanciate one Team");
-                    }
-                }*/
-            //}
-            //catch (Exception ignored){
-            //}
-        //}
         return instances;
     }
-
-
-
 }

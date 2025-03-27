@@ -9,7 +9,22 @@ commands:
   adminChat:
     usage: /adminChat
     description: sends message to all admins.
-
+    permission: AStrangeCorePlugin.admin
   updateAdminList:
     usage: /updateAdminList
-    description: prints 2.
+    description: updatesAdminList
+    permission: AStrangeCorePlugin.engineer
+  showAdd:
+    usage: /showAdd
+    description: shows add to every single player online that is not in the red or green teams excluding the admin teams.
+    permission: AStrangeCorePlugin.engineer
+
+    permissions:
+      AStrangeCorePlugin.admin:
+        description: allows access to AdminChat and simple moderator tools. Allows for vision of AntiCheat (in the future).
+        default: op
+      AStrangeCorePlugin.engineer:
+        description: Allows for administrator privileges plus backend commands that update data in the Server.
+        default: false
+        children:
+          AStrangeCorePlugin.admin: true

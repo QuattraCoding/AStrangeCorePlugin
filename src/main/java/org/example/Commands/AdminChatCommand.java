@@ -1,5 +1,6 @@
 package org.example.Commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;
 import org.example.CommandExecutor.CommandExecutor;
@@ -28,16 +29,21 @@ public class AdminChatCommand extends Command {
     public boolean execute(@Nonnull CommandSender commandSender,@Nonnull String s,@Nonnull String[] args) {
         Main.admins = new ArrayList<>(UpdateAdminList.update(plugin.getConfig().getStringList("modTeamNames")));
         String namePlate = "&7(Admin chat) <" + commandSender.getName() + "> ";
-        if(args.length == 0){
-            commandSender.sendMessage(Utils.chat("&c not enough arguments "));
-        }
-        else {
-            String message = String.join(" ", args);
-            for(Player admin : Main.admins){
-                admin.sendRawMessage(Utils.chat(namePlate + message));
+        if (!Main.admins.isEmpty()){
+            if(args.length == 0){
+                commandSender.sendMessage(Utils.chat("&c not enough arguments "));
             }
+            else {
+                String message = String.join(" ", args);
+                for(Player admin : Main.admins){
+                    admin.sendRawMessage(Utils.chat(namePlate + message));
+                }
+            }
+            return true;
+        }else {
+            Bukkit.broadcastMessage("There are no admins on the server.");
+         return true;
         }
-        return true;
     }
 
 }

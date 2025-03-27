@@ -23,6 +23,14 @@
 
     <dependencies>
         <dependency>
+        <groupId>org.mineacademy.server</groupId>
+        <artifactId>Spigot-1.24.4</artifactId>
+            <version>1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/home/container/versions/1.21.4/paper-1.21.4.jar</systemPath>
+        </dependency>
+
+        <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.21.4-R0.1-SNAPSHOT</version>

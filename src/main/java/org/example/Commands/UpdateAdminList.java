@@ -40,12 +40,9 @@ public class UpdateAdminList extends Command {
                     admins.add(plugin.getServer().getPlayer(p));
                     }
                 }
-                info("player is in ");
             }
         return admins;
     }
-
-
 
     static public Collection<? extends Team> updateTeams(List<String> str){
         Collection<Team> teamCollection = new HashSet<>();

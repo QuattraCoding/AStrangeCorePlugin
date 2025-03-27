@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.example.Commands.AdminChatCommand;
+import org.example.Commands.ShowAddCommand;
 import org.example.Commands.UpdateAdminList;
 import org.example.Main;
 
@@ -26,9 +27,14 @@ public class CommandExecutor implements org.bukkit.command.CommandExecutor {
         commands = new ArrayList<>();
         commands.add(new AdminChatCommand());
         commands.add(new UpdateAdminList());
+        commands.add(new ShowAddCommand());
         for (Command c : commands){
         Objects.requireNonNull(plugin.getCommand(c.getName())).setExecutor(this);
         Bukkit.broadcastMessage(c.getName() + " instanciated command.");
+
+
+        // Classname name = new Classname(inparams);
+        // name.function(inparams)
     }
     }
 

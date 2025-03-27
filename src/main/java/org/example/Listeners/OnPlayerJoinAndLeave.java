@@ -7,6 +7,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.checkerframework.checker.units.qual.A;
 import org.example.Commands.AdminChatCommand;
+import org.example.Commands.UpdateAdminList;
 import org.example.Main;
 
 import java.util.ArrayList;
@@ -24,11 +25,13 @@ public class OnPlayerJoinAndLeave implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event){
         Main.onlinePlayers = new ArrayList<>(Bukkit.getOnlinePlayers());
+        UpdateAdminList.updateAdmins();
     }
 
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent event){
         Main.onlinePlayers = new ArrayList<>(Bukkit.getOnlinePlayers());
+        UpdateAdminList.updateAdmins();
     }
 
 

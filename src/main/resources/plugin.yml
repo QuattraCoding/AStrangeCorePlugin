@@ -18,6 +18,18 @@ commands:
     usage: /showAdd
     description: shows add to every single player online that is not in the red or green teams excluding the admin teams.
     permission: AStrangeCorePlugin.engineer
+  AscRed:
+    usage: /ascred
+    description: adds player to red team.
+  AscGreen:
+    usage: /ascgreen
+    description: adds player to green team.
+  showRed:
+    usage: /showRed
+    description: shows menu for Red Team, where you can select it.
+  showGreen:
+    usage: /showGreen
+    description: shows menu for Green Team, where you can select it.
 
     permissions:
       AStrangeCorePlugin.admin:

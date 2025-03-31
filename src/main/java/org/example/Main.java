@@ -40,10 +40,10 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onDisable(){
-        if (!Main.admins.isEmpty()){
+        if (!(Main.admins == null)){
             Main.admins.clear();
-            Bukkit.broadcastMessage("admins cleared");
         }
+        Bukkit.broadcastMessage("admins cleared");
         updatePlayerCount();
         Bukkit.broadcastMessage("aStrangeCore has shut down.");
     }

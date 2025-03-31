@@ -1,5 +1,6 @@
 package org.example.Teams;
 
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
 import org.example.Main;

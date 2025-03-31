@@ -22,16 +22,16 @@ public class GreenRedTextComponent {
         switch(redOrGreen){
             case GREEN -> {
                 ClickEvent clickEvent;
-                str = "/team join turtle " + plr.getName();
-            txtComp.setText("Join Green Team");
+                str = "/ascgreen";
+            txtComp.setText("Join Green");
             txtComp.setColor(ChatColor.GREEN);
             clickEvent = new ClickEvent(RUN_COMMAND, str);
             txtComp.setClickEvent(clickEvent);
             }
             case RED -> {
                 ClickEvent clickEvent;
-                str = "/team join Not_turtle_aka_red " + plr.getName();
-                txtComp.setText("Join Red Team");
+                str = "/ascred";
+                txtComp.setText("Join Red");
                 txtComp.setColor(ChatColor.RED);
                 clickEvent = new ClickEvent(RUN_COMMAND, str);
                 txtComp.setClickEvent(clickEvent);

@@ -2,4 +2,23 @@ modTeamNames:
   - "admin"
   - "bad_admin"
   - "good_admin"
-
+redTeamExplanation:
+  Lore:
+    - "Full of natural fighters"
+    - "Those that hunger for the thrill of the kill"
+    - "However, mercifull still."
+    - "These beasts only hunt others of their kind."
+  Explanation:
+    - "Joining the red team means that you:"
+    - "* Acknowledge that you can get killed by red players"
+    - "* Are only allowed to kill red players"
+greenTeamExplanation:
+  Lore:
+    - "Peaceful creatures of nature"
+    - "Experts of building"
+    - "these people want to be left alone"
+    - "They will not get harmed by the beasts"
+  Explanation:
+    - "Joining the green team means that you:"
+    - "* Are informed you cannot attack anyone else"
+    - "* in return, you will not be harmed by any other"

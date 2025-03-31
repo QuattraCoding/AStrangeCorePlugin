@@ -1,17 +1,18 @@
 package org.example.CenteredMessages;
 
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;
 
 public class CenterMessage {
 
-    static public void sendCenteredMessage(Player player, String message) {
+    static public String sendCenteredMessage(String text) {
         int CENTER_PX = 154; // The center of a chat message in pixels (MC uses pixel-based alignment)
 
         int messagePxSize = 0;
         boolean previousCode = false;
         boolean isBold = false;
 
-        for (char c : message.toCharArray()) {
+        for (char c : text.toCharArray()) {
             if (c == '§') {
                 previousCode = true;
                 continue;
@@ -37,7 +38,7 @@ public class CenterMessage {
             compensated += spaceLength;
         }
 
-        player.sendMessage(sb.toString() + message);
+        return (sb.toString() + text);
     }
 
     private static int getCharWidth(char c, boolean isBold) {
@@ -52,15 +53,15 @@ public class CenterMessage {
         };
     }
 
-    static public String sendBlankMessage(int spaceCount) {
-        return " ".repeat(Math.max(0, spaceCount));
+    static public TextComponent sendBlankMessage(int spaceCount) {
+        return new TextComponent(" ".repeat(Math.max(0, spaceCount)));
     }
 
-    static public String sendBlankCenteredMessage(Player player) {
+    static public TextComponent sendBlankCenteredMessage(Player player) {
         int CENTER_PX = 154; // The center of the chat in pixels
         int spaceWidth = getCharWidth(' ', false) + 1;
         int totalSpaces = CENTER_PX / spaceWidth;
 
-        return sendBlankMessage(totalSpaces);
+        return new TextComponent(sendBlankMessage(totalSpaces));
     }
 }

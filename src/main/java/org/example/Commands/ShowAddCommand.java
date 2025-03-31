@@ -2,6 +2,7 @@ package org.example.Commands;
 
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -10,6 +11,7 @@ import org.example.Main;
 import org.example.bukkitRunnables.ShowAdd;
 
 import javax.annotation.Nonnull;
+import java.util.Arrays;
 
 public class ShowAddCommand extends Command {
 
@@ -26,8 +28,21 @@ public class ShowAddCommand extends Command {
     @Override
     public boolean execute(@Nonnull CommandSender sender,@Nonnull String label,@Nonnull String[] args) {
         if(sender instanceof Player){
-            plr = (Player) sender;
-            showAdd.run();
+
+            if (args.length == 0){
+                plr = (Player) sender;
+                showAdd.run();
+            }
+            else if (args.length == 1) {
+                Player plr = Bukkit.getServer().getPlayer(Arrays.toString(args));
+                if (plr == null){
+                    sender.sendMessage("Not a player. usage: /showAdd <Player> ");
+                }
+                else {
+                    ShowAdd.sendAdd(plr);
+                }
+            }
+
         }
         return true;
     }

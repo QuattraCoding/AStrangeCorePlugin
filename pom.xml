@@ -23,12 +23,11 @@
 
     <dependencies>
         <dependency>
-        <groupId>org.mineacademy.server</groupId>
-        <artifactId>Spigot-1.24.4</artifactId>
-            <version>1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/home/container/versions/1.21.4/paper-1.21.4.jar</systemPath>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-api</artifactId>
+            <version>4.19.0</version>
         </dependency>
+
 
         <dependency>
             <groupId>org.spigotmc</groupId>

@@ -3,9 +3,7 @@ package org.example.CommandExecutor;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.example.Commands.AdminChatCommand;
-import org.example.Commands.ShowAddCommand;
-import org.example.Commands.UpdateAdminList;
+import org.example.Commands.*;
 import org.example.Main;
 
 import javax.annotation.Nonnull;
@@ -23,11 +21,15 @@ public class CommandExecutor implements org.bukkit.command.CommandExecutor {
     public CommandExecutor(Main plugin){
     this.plugin = plugin;
     CommandExecutor.staticPlugin = plugin;
-    //commands  = (ArrayList<Command>) DynamicClassLoader.loadClasses(Command.class);
+    //commands  = (ArrayList<Command>) DynamicClassLoader.loadClasses();
         commands = new ArrayList<>();
         commands.add(new AdminChatCommand());
         commands.add(new UpdateAdminList());
         commands.add(new ShowAddCommand());
+        commands.add(new JoinGreenCommand());
+        commands.add(new JoinRedCommand());
+        commands.add(new ShowGreenCommand());
+        commands.add(new ShowRedCommand());
         for (Command c : commands){
         Objects.requireNonNull(plugin.getCommand(c.getName())).setExecutor(this);
         Bukkit.broadcastMessage(c.getName() + " instanciated command.");

@@ -1,4 +1,4 @@
-package org.example.Messages;
+package org.example.MinecraftChat.Messages;
 
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;

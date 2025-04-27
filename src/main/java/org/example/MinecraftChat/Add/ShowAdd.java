@@ -1,27 +1,17 @@
-package org.example.bukkitRunnables;
+package org.example.MinecraftChat.Add;
 
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.ComponentLike;
-import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.BaseComponent;
-import net.md_5.bungee.api.chat.ComponentStyle;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
-import org.bukkit.Instrument;
-import org.bukkit.Note;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
-import org.example.CenteredMessages.CenterMessage;
 import org.example.Main;
-import org.example.Messages.BuiltMessages.ChooseTeam;
-import org.example.bukkitRunnables.AddComponents.GreenRedTextComponent;
+import org.example.MinecraftChat.Messages.BuiltMessages.ChooseTeam;
 
 import java.util.*;
-
-import net.kyori.adventure.*;
 
 public class ShowAdd extends BukkitRunnable {
     Main plugin;
@@ -38,15 +28,21 @@ public class ShowAdd extends BukkitRunnable {
 
     @Override
     public void run() {
-        Main.logger.info("Add running.");
-        for (Player p : Main.onlinePlayers){
-            for(Team t : scr.getTeams()){
-                if (t.getEntries().contains(p.getName()) && Main.onlinePlayers.contains(p)){
-                 break;
+        Main.onlinePlayers = new ArrayList<>(Bukkit.getOnlinePlayers());
+        if (!Main.onlinePlayers.isEmpty()){
+            Main.logger.info("Add running.");
+            for (Player p : Main.onlinePlayers){
+                boolean isInTeam = false;
+                for(Team t : scr.getTeams()){
+                    if (t.getEntries().contains(p.getName()) && Main.onlinePlayers.contains(p)){
+                        isInTeam = true;
+                    }
+                }
+                if (!isInTeam){
+                    sendAdd(p);
+                    p.playSound(p, Sound.BLOCK_NOTE_BLOCK_PLING, 1, 1);
                 }
             }
-            sendAdd(p);
-            p.playSound(p.getLocation(), Sound.BLOCK_AMETHYST_BLOCK_BREAK, 1, 1);
         }
 
     }

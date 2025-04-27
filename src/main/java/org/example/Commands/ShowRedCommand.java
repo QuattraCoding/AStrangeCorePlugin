@@ -3,7 +3,7 @@ package org.example.Commands;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.example.Messages.BuiltMessages.RedMessage;
+import org.example.MinecraftChat.Messages.BuiltMessages.RedMessage;
 import org.jetbrains.annotations.NotNull;
 
 public class ShowRedCommand extends Command {

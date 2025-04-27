@@ -1,4 +1,4 @@
-package org.example.CenteredMessages;
+package org.example.MinecraftChat.CenteredMessages;
 
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;

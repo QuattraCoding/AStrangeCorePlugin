@@ -1,14 +1,12 @@
 package org.example.Commands;
 
-import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.example.CommandExecutor.CommandExecutor;
 import org.example.Main;
-import org.example.bukkitRunnables.ShowAdd;
+import org.example.MinecraftChat.Add.ShowAdd;
 
 import javax.annotation.Nonnull;
 import java.util.Arrays;

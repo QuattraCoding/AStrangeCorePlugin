@@ -20,16 +20,19 @@ commands:
     permission: AStrangeCorePlugin.engineer
   AscRed:
     usage: /ascred
-    description: adds player to red team.
+    description: adds player to red team.ssss
   AscGreen:
     usage: /ascgreen
     description: adds player to green team.
+
   showRed:
     usage: /showRed
     description: shows menu for Red Team, where you can select it.
   showGreen:
     usage: /showGreen
     description: shows menu for Green Team, where you can select it.
+
+
 
     permissions:
       AStrangeCorePlugin.admin:
@@ -40,3 +43,6 @@ commands:
         default: false
         children:
           AStrangeCorePlugin.admin: true
+      AStrangeCorePlugin.player:
+        description: default permissions given to players of the server.
+        default: true

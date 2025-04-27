@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Set;
 
 public class DynamicClassLoader {
-    static List<Object> instances;
-    public static List<?> loadClasses() {
+    static List<Command> instances;
+    public static List<? extends Command> loadClasses() {
         instances = new ArrayList<>();
         //if (c.equals(Command.class)){
             try {
@@ -21,7 +21,7 @@ public class DynamicClassLoader {
                 Set<Class<? extends Command>> classes = reflections.getSubTypesOf(Command.class);
                 for (Class<? extends Command> cl : classes) {
                     try {
-                        Object instance = cl.getDeclaredConstructor().newInstance();
+                        Command instance = cl.getDeclaredConstructor().newInstance();
                         instances.add(instance);
                     } catch (InstantiationException | IllegalAccessException | NoSuchMethodException |
                              InvocationTargetException e) {

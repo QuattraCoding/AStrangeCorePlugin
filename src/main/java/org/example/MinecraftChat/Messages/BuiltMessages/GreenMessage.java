@@ -1,4 +1,4 @@
-package org.example.Messages.BuiltMessages;
+package org.example.MinecraftChat.Messages.BuiltMessages;
 
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.BaseComponent;
@@ -6,8 +6,8 @@ import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;
 import org.example.CommandExecutor.CommandExecutor;
 import org.example.Main;
-import org.example.Messages.MessageTemplate;
-import org.example.bukkitRunnables.AddComponents.GreenRedTextComponent;
+import org.example.MinecraftChat.Messages.MessageTemplate;
+import org.example.MinecraftChat.Add.AddComponents.GreenRedTextComponent;
 import org.example.utils.Utils;
 
 import java.util.ArrayList;
@@ -66,6 +66,7 @@ public class GreenMessage extends MessageTemplate {
 
     public static TextComponent join(){
         TextComponent txt = GreenRedTextComponent.RedGreenTextComponentFactory(GreenRedTextComponent.redOrGreen.GREEN, plr);
+        txt.setText(createCenteredTextComponent("Join Green"));
         return txt;
     }
 

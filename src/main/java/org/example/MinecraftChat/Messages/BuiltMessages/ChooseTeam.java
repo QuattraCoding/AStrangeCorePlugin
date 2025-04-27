@@ -1,15 +1,13 @@
-package org.example.Messages.BuiltMessages;
+package org.example.MinecraftChat.Messages.BuiltMessages;
 
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;
-import org.checkerframework.checker.units.qual.C;
-import org.example.CenteredMessages.CenterMessage;
+import org.example.MinecraftChat.CenteredMessages.CenterMessage;
 import org.example.Main;
-import org.example.Messages.MessageTemplate;
-import org.example.bukkitRunnables.AddComponents.GreenRedTextComponent;
-import org.jetbrains.annotations.NotNull;
+import org.example.MinecraftChat.Messages.MessageTemplate;
+import org.example.MinecraftChat.Add.AddComponents.GreenRedTextComponent;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;

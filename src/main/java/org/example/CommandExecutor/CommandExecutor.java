@@ -19,9 +19,11 @@ public class CommandExecutor implements org.bukkit.command.CommandExecutor {
     ArrayList<Command> commands;
 
     public CommandExecutor(Main plugin){
-    this.plugin = plugin;
-    CommandExecutor.staticPlugin = plugin;
-    //commands  = (ArrayList<Command>) DynamicClassLoader.loadClasses();
+
+        CommandExecutor.staticPlugin = plugin;
+        this.plugin = plugin;
+
+        /* commands  = (ArrayList<Command>) DynamicClassLoader.loadClasses(); */
         commands = new ArrayList<>();
         commands.add(new AdminChatCommand());
         commands.add(new UpdateAdminList());
@@ -30,6 +32,10 @@ public class CommandExecutor implements org.bukkit.command.CommandExecutor {
         commands.add(new JoinRedCommand());
         commands.add(new ShowGreenCommand());
         commands.add(new ShowRedCommand());
+
+
+
+
         for (Command c : commands){
         Objects.requireNonNull(plugin.getCommand(c.getName())).setExecutor(this);
         Bukkit.broadcastMessage(c.getName() + " instanciated command.");
